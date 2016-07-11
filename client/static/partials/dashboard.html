@@ -1,0 +1,32 @@
+<div ng-controller="DashController">
+  <div>
+      <p>
+        Welcome <span ng-bind="sessionUser.userName | sentenceCase"></span>
+      </p>
+
+      <a href="#/new_question">Add a Question</a>
+
+      <hr>
+        <!-- {{questions}} -->
+        <p> Search for a question: <input type="text" ng-model="search_filter"></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th> Actions </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="question in questions | filter:search_filter">
+            <td ng-bind="question.question"></td>
+            <td ng-bind="question._answerId.length"></td>
+            <td><a href="#/questions/{{question._id}}">Show</a>  |  <a href="#/questions/{{question._id}}/new_answer">Answer</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      <button ng-click="logout()">Logout</button>
+  </div>

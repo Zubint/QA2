@@ -1,0 +1,27 @@
+<div ng-controller="ShowQuestionController">
+
+<a href="#dashboard">Home</a> | <a href="#/questions/{{questions._id}}/new_answer">Answer this question<a>
+
+<button ng-click="logout()">Logout</button>
+<h1> show question </h1>
+
+<!-- {{questions}} -->
+
+<h2>{{questions.question}}</h2>
+<li style="list-style:none" ng-bind="questions.details"></li>
+
+
+<hr>
+<h2>Answers here: </h2>
+
+  <div ng-repeat="answer in questions._answerId | orderBy:'-likes' track by $index">
+    <h2><span ng-bind="answer._userId.name"></h2>
+    <p ng-bind="answer.answer"></p>
+    <p ng-bind="answer.details"></p>
+    <p ng-bind="answer.likes"> Likes</p>
+    <button ng-click="addLike(answer)">Like!</button>
+
+      <!-- {{answer}} -->
+  </div>
+
+</div>

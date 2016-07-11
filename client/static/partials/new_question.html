@@ -1,0 +1,18 @@
+<div ng-controller="QuestionsController">
+
+<a href="#/dashboard">Home</a>
+<h1>NEW QUESTION</H1>
+
+<P>Question: <textarea ng-model="newQuestion.question"></textarea></p>
+
+<p>Description (Optional): <textarea ng-model="newQuestion.description"></textarea></p>
+
+<button><a href="#/dashboard" style="text-decoration:none">Cancel</a></button> <button ng-click="createQuestion()">Submit</button>
+
+  <p>
+    <ul style="list-style:none">
+      <li ng-repeat="error in errorsArray" ng-bind="error"></li>
+    </ul>
+  </p>
+
+</div>

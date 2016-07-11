@@ -1,0 +1,25 @@
+<div ng-controller="NewAnswersController">
+
+<a href="#/dashboard">Home</a> | <a href="#/questions/{{questions._id}}">Go Back to Question</a>
+
+<button ng-click="logout()">Logout</button>
+<h1> answer the question </h1>
+
+<!-- {{questions}}
+{{sessionUser}} -->
+
+<P>Your Answer: <textarea ng-model="newAnswer.answer"></textarea></p>
+
+<p>Description (Optional): <textarea ng-model="newAnswer.details"></textarea></p>
+
+<button><a href="#/dashboard" style="text-decoration:none">Cancel</a></button>
+<button ng-click="createAnswer()">Submit</button>
+
+<p>
+  <ul ng-repeat="error in errorsArray" style="list-style:none">
+    <li ng-bind="error"></li>
+  </ul>
+</p>
+<!-- {{errorsArray[0]}}
+{{errorsArray}} -->
+</div>
